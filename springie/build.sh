@@ -1,2 +1,2 @@
 #!/bin/sh
-javac com/springie/FrEnd.java 
+javac com/springie/FrEnd.java -d classes

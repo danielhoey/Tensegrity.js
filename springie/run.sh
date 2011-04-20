@@ -1,1 +1,1 @@
-java -cp . com.springie.FrEnd
+java -cp .:classes com.springie.FrEnd
