@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<heirarchy version="1.0"?>
+ <node name="http://springie.com/models/primitive">
+  <leaf name="cube.spr" desc="Cube"/>
+  <leaf name="dodecahedron.spr" desc="Dodecahedron"/>
+  <leaf name="tetrahedron.spr" desc="Tetrahedron"/>
+  <leaf name="icosahedron.spr" desc="Icosahedron"/>
+  <leaf name="octahedron.spr" desc="Octahedron"/>
+ </node>
+</heirarchy>

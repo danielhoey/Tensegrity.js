@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<heirarchy version="1.0"?>
+ <node name="http://springie.com/models/miscellaneous">
+  <leaf name="cube.spr" desc="Cube"/>
+  <leaf name="cube_simple_stabilised.spr" desc="Cube (stable)"/>
+  <leaf name="cube_squishy.spr" desc="Cube (squishy)"/>
+  <leaf name="famous_fish.spr" desc="Famous fish"/>
+  <leaf name="icosahedron.spr" desc="Icosahedron"/>
+  <leaf name="no_venus.spr" desc="No Venus"/>
+  <leaf name="stretch_test.spr" desc="Stretch test"/>
+ </node>
+</heirarchy>

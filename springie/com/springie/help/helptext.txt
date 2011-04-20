@@ -1,0 +1,93 @@
+Springie help
+-------------
+
+Index
+-----
+
+1) Brief feature description;
+2) Import and export
+3) How to run Springie offline;
+4) How to obtain the source for Springie;
+5) License;
+6) Finding out more.
+
+1. Brief feature description
+----------------------------
+
+Springie is a Java 1.1 tensigrity simulator.
+
+It allows simulation of four basic elements:
+
+* Struts - solid members which exert force when compressed;
+* Cables - tensile only members;
+* Nodes  - joints, hubs and connectors;
+* Skins  - membranes joining;
+
+The simulation is performed in a three dimensional
+virtual world with simulated mass, elasticity,
+collisions, gravity, charge and friction.
+
+Models of physical objects can be dynamically
+manipulated in this environment.
+
+2. Import and Export
+--------------------
+
+Springie allows import of a number of file types - it reads:
+
+* .SPR files - Springie's native format.
+* .EIG files - "Elastic Interval Geometry" files
+* .RBF files - "Richard Buckminster Fuller" files - from Struck;
+* .FABRIC files - Fluidiom's native format.
+
+It can export information in the form of .SPR files and
+.WRL (VRML) files.  VRML export allows for higher quality
+rendering than Springie offers natively, while still
+allowing easy access to the results via a web browser.
+
+You will need to run Springie as an application (rather
+than an applet) if you want to be able to read or write
+files - due to security restrictions placed on what
+unsigned applets can do.
+
+3. How to run Springie as an application
+----------------------------------------
+
+To run Springie as an application, first download the
+.JAR file from http://springie.com/ to a directory.
+
+Sensible operating systems allow you to run .JAR files
+by double-clicking them.  If that doesn't work, the file
+can usually be run by typing:
+
+  java -jar springie.jar
+
+...at a command prompt with the current directory listing
+showing the jar file.
+
+Microsoft Windows users who haven't downloaded a modern
+Java Virtual Machine from http://java.com/ can often still
+run Springie as an application - by using the command:
+
+  jview /cp springie.jar com.springie.FrEnd
+  
+You will *need* to run Springie as an application
+if you want to be able to read or write files from
+your local machine.
+
+4) How to obtain the source for Springie
+----------------------------------------
+Source code for Springie is available on SourceForge:
+
+  http://sourceforge.net/projects/springie/
+
+5) License
+----------
+Springie has been placed into the public domain.
+
+6) Finding out more
+-------------------
+Springie has more comprehensive documentation available
+online.
+
+Go to http://springie.com/manual/ for more details.

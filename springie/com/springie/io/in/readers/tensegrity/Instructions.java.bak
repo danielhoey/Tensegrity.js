@@ -1,0 +1,90 @@
+//* Read in information from files...
+
+package com.springie.io.in.readers.tensegrity;
+
+public class Instructions {
+
+  static final String[] INS_NAMES = {
+    "N",  // 0 // Node
+    "X",  // 1
+    "Y",  // 2
+    "Z",  // 3
+    "DX", // 4
+    "DY", // 5
+    "DZ", // 6
+    "R",  // 7 // radius
+    "M",  // 8 // mass
+    "LK", // 9 // link
+    "E",  // 10 // Elasticity
+    "DA", // 11 // Damping
+    "S",  // 12 // Status
+    "L",  // 13 // Length
+    "CA", // 14 // Cable
+    "CR", // 15 // Creature
+    "PH", // 16 // Phase?
+    "A",  // 17 // Amplitude...
+    "F",  // 18 // ?
+    "NG", // 19 // Node group
+    "LG", // 20 // Link group
+    "G",  // 21 // Gravity
+    "GO", // 22 // Gravity On
+    "GV", // 23 // Gravity
+    "PG", // 24 // Polygon group
+    "P",  // 25 // Polygon
+    "C",  // 26 // Colour
+    "N1", // 27 // Node 1
+    "N2", // 28 // Node 2
+    "N3", // 29 // Node 3
+    "N4", // 30
+    "N5", // 31
+    "N6", // 32
+    "N7", // 33
+    "N8", // 34
+    "N9", // 35
+    "H",  // 36 // Hidden
+    "FX", // 37 // Fixed
+    "D",  // 38 // Disabled
+  };
+
+  static final int N   = 0;
+  static final int X   = 1;
+  static final int Y   = 2;
+  static final int Z   = 3;
+  static final int DX  = 4;
+  static final int DY  = 5;
+  static final int DZ  = 6;
+  static final int R   = 7;
+  static final int M   = 8;
+  static final int LK  = 9;
+  static final int E   = 10;
+  static final int DA  = 11;
+  static final int S   = 12;
+  static final int L   = 13;
+  static final int CA  = 14;
+  static final int CR  = 15;
+  static final int PH  = 16;
+  static final int A   = 17;
+  static final int F   = 18;
+  static final int NG  = 19;
+  static final int LG  = 20;
+  static final int G   = 21;
+  static final int GO  = 22;
+  static final int GV  = 23;
+  static final int PG  = 24;
+  static final int P   = 25;
+  static final int C   = 26;
+  static final int N1  = 27;
+  static final int N2  = 28;
+  static final int N3  = 29;
+  static final int N4  = 30;
+  static final int N5  = 31;
+  static final int N6  = 32;
+  static final int N7  = 33;
+  static final int N8  = 34;
+  static final int N9  = 35;
+  static final int H   = 36;
+  static final int FX  = 37;
+  static final int D   = 38;
+}
+
+                          

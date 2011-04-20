@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<heirarchy version="1.0"?>
+ <node name="http://springie.com/models/stellated">
+  <leaf name="simple_6.spr" desc="Simple (6)"/>
+  <leaf name="floating_compression_12.spr" desc="Floating Compression (12)"/>
+  <leaf name="sphere_32.spr" desc="sphere (32)"/>
+  <leaf name="sphere_90.spr" desc="sphere (90)"/>
+  <leaf name="sphere_120.spr" desc="sphere (120)"/>
+  <leaf name="inconceivable.spr" desc="inconceivable"/>
+ </node>
+</heirarchy>
