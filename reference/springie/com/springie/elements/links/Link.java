@@ -14,37 +14,21 @@ import com.springie.world.World;
 
 public class Link extends BaseElement {
   public Node node1;
-
   public Node node2;
-
   public LinkType type;
-
   public static int number_of_strut_render_divisions = 2;
-
   public static int number_of_cable_render_divisions = 1;
-
   public static int elasticity_global = 2200;
-
   public static int damping_global = 660;
-
   public static World temp_private_world;
-
   static final int MAX_DIAMETER = 16;
-
   public static final int INVISIBLE = 0;
-
   public static final int LONG = 0;
-
   public static final int SHORT = 1;
-
   public static final int number_of_dots = 2;
-
   public static final int log_number_of_dots = 1;
-
   public static int link_display_struts_type = LinkRenderType.MULTIPLE;
-
   public static int link_display_cables_type = LinkRenderType.MULTIPLE;
-
   public static int link_display_length = SHORT;
 
   public Link(Node e1, Node e2, LinkType type, Clazz clazz) {
@@ -89,6 +73,15 @@ public class Link extends BaseElement {
     this.node2 = e2;
   }
 
+  public int length() {
+    int delta_x = (this.node1.pos.x - this.node2.pos.x);
+    int delta_y = (this.node1.pos.y - this.node2.pos.y);
+    int delta_z = (this.node1.pos.z - this.node2.pos.z);
+    int actual_length_squared = (delta_x * delta_x) + (delta_y * delta_y) + (delta_z * delta_z);
+
+    return SquareRoot.fastSqrt(actual_length_squared);
+  }
+
   public int getActualLength() {
     final int delta_x = (this.node1.pos.x - this.node2.pos.x) >> Coords.shift;
     final int delta_y = (this.node1.pos.y - this.node2.pos.y) >> Coords.shift;
@@ -99,7 +92,7 @@ public class Link extends BaseElement {
     return (SquareRoot.fastSqrt(1 + actual_length_squared)) << Coords.shift;
   }
 
-  void applyForce() {
+  public void applyForce() {
     if (this.type.elasticity != 0) {
       applyForceToNodes();
     }

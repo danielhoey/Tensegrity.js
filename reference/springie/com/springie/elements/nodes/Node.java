@@ -22,51 +22,28 @@ import com.springie.world.World;
  */
 public class Node extends BaseElement {
   public Point3D pos = new Point3D(0, 0, 0);
-
   public Vector3D velocity = new Vector3D(0, 0, 0);
-
   public NodeType type;
-
   public boolean fixed;
-
   public ListOfIntegers list_of_links = new ListOfIntegers();
-
   public ListOfIntegers list_of_polygons = new ListOfIntegers();
-
   public Point3D current_bin = new Point3D(-1, -1, -1);
-
   public Composite creature; // TODO get rid of this...?
-
   public static int thickness = 6; // display only...
-
   public static int max_speed = Integer.MAX_VALUE;
-
   public static int viscocity;
-
   public static int friction_strength;
-
   static Node temp_agent;
-
   static Node temp2_agent;
-
   public static int[] sin_tab;
-
   public static int[] cos_tab;
-
   public static int lut_shift = 8;
-
   public static int lut_magnitude = 1 << lut_shift;
-
   public static int LOG_TRIG_TAB_SIZE = 7;
-
   public static int TRIG_TAB_SIZE = 1 << LOG_TRIG_TAB_SIZE;
-
   public static int TRIG_TAB_SIZEMO = TRIG_TAB_SIZE - 1;
-
   static int TRIG_TAB_SIZEO2 = TRIG_TAB_SIZE >>> 1;
-
   public static World temp_private_world;
-
   public static int number_of_render_divisions = 1;
 
   public Node() {
@@ -85,8 +62,7 @@ public class Node extends BaseElement {
     this.type.log_mass = 16;
   }
 
-  public Node(Node e, NodeTypeFactory node_type_factory,
-    ClazzFactory clazz_factory) {
+  public Node(Node e, NodeTypeFactory node_type_factory, ClazzFactory clazz_factory) {
     //setUpVectors();
     set(e, node_type_factory, clazz_factory);
   }
@@ -103,8 +79,7 @@ public class Node extends BaseElement {
     this.type.log_mass = 16;
   }
 
-  public void set(Node e, NodeTypeFactory node_type_factory,
-    ClazzFactory clazz_factory) {
+  public void set(Node e, NodeTypeFactory node_type_factory, ClazzFactory clazz_factory) {
     this.pos.x = e.pos.x;
     this.pos.y = e.pos.y;
     this.pos.z = e.pos.z;
