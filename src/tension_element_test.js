@@ -16,5 +16,7 @@ test("elasticity - compression", function() {
   deepEqual(element.force(), [0,0,0]);
 });
 test("elasticity - multiple dimension", function() {
-  ok(false, "todo");
+  element = TensionElement.create({length: 10, elasicity: 4});
+  element.position = [[0,0,0], [6,6,7]];
+  deepEqual(element.force(), [-24/11, -24/11, -28/11]);
 });
