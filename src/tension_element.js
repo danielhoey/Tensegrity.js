@@ -1,24 +1,30 @@
 
 var TensionElement = {
   create: function(data) { 
-            data.set_position = function(a, b) {
-              this.position = [a, b];
-            };
             data.force = function() {
-              -this.elasicity * Math.length(this.vector());
+              return [-this.elasicity * this.stretch(), 0, 0];
             }
             data.vector = function() {
               var p = this.position;
               return [p[1][0] - p[0][0], p[1][1]-p[0][1], p[1][2]-p[0][2]];
+            }
+            data.stretch = function() {
+              var diff = this.vector()[0] - this.length;
+              if (diff < 0) { diff = 0; }
+              return diff;
+            }
+
+            function length(vector) {
+              var v = vector;
+              return Math.sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2]);
             }
 
             return data; 
           }
 };
 
-var Math = {
-  length: function(vector) {
-            var v = vector;
-            //v[1][0] - v[0][0] + vector[1][1] -
-          }
+var Vector = {
+  scale: function(k, v) {
+         }
+
 }
