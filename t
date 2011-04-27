@@ -1,19 +1,31 @@
 #!/usr/bin/env ruby
 
-compile_output = `coffee -c src`
-if not compile_output.empty?
-  puts compile_output
+if not system("coffee -c src")
   exit
 end
 
-load_test_files = ARGV.collect{|file_path| %{load("#{file_path}_test.js");}}.join("\n")
+def test_files(arguments)
+  arguments.collect{ |arg| 
+    file = "#{arg}_test.js"
+    if File.exists?(file)
+      file
+    elsif File.directory?(arg)
+      Dir["#{arg}/*_test.js"]
+    else
+      nil
+    end
+  }.compact.flatten
+end
+
+load_test_files = test_files(ARGV).collect{|file_path| %{load("#{file_path}");}}.join("\n")
     
 script = %{
 load("dependency/qunit/qunit-cli.js");
+load("dependency/underscore.js");
 load("src/global.js");
 #{load_test_files}
 
-QUnit.begin(); // hacked b/c currently QUnit.begin is normally called on document.load
+QUnit.begin();
 QUnit.start();
 }
 
