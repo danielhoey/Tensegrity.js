@@ -3,8 +3,6 @@
 Global.Vector =
   length: (v) -> Math.sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2])
   sum: (v1, v2) ->
-    v1 = v1.data
-    v2 = v2.data
     [v1[0]+v2[0], v1[1]+v2[1], v1[2]+v2[2]]
 
   create: (p1, p2) ->
@@ -16,6 +14,9 @@ Global.Vector =
     l = Vector.length(v)
 
     return {
+      0: v[0]
+      1: v[1]
+      2: v[2]
       length: l
       unit: () -> Vector.create([v[0]/l, v[1]/l, v[2]/l])
       scale: (k) -> [k*v[0], k*v[1], k*v[2]]

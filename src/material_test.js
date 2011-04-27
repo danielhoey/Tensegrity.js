@@ -3,7 +3,7 @@ load("src/material.js");
 module("Material");
 test("position vector", function() {
   element= Material.create({position:[[0,0,0], [11,0,0]]});
-  deepEqual(element.vector().data, [11,0,0]);
+  arrayEquals(element.vector(), [11,0,0]) 
 });
 test("elasticity - one dimension", function() {
   element = Material.create({length: 10, elasicity: 4});
@@ -20,3 +20,20 @@ test("elasticity - multiple dimension", function() {
   element.position = [[0,0,0], [6,6,7]];
   deepEqual(element.force(), [-24/11, -24/11, -28/11]);
 });
+
+
+function arrayEquals(a1, a2) {
+  i = 0;
+  while(true) {
+    if (a1[i] != a2[i]) {
+      QUnit.push(false, a1[i], a2[i], "element "+i+" does not match");
+    } 
+    else if (a1[i] === undefined) {
+      QUnit.push(true);
+      return;
+    }
+    else {
+      i = i + 1
+    }
+  }
+}
