@@ -1,6 +1,11 @@
+load('src/vector.js')
 
 Global.Node =
   create: (object) ->
-    object.force = () -> 0
+    object.force = () ->
+      _.reduce(@links,
+               (f,l) -> Vector.sum(f,l.force()),
+               [0,0,0])
+
     return object
 
