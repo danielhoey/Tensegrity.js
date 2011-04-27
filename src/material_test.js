@@ -1,22 +1,22 @@
-load("src/tension_element.js");
+load("src/material.js");
 
-module("TensionElement");
+module("Material");
 test("position vector", function() {
-  element= TensionElement.create({position:[[0,0,0], [11,0,0]]});
+  element= Material.create({position:[[0,0,0], [11,0,0]]});
   deepEqual(element.vector().data, [11,0,0]);
 });
 test("elasticity - one dimension", function() {
-  element = TensionElement.create({length: 10, elasicity: 4});
+  element = Material.create({length: 10, elasicity: 4});
   element.position = [[0,0,0], [11,0,0]];
   deepEqual(element.force(), [-4,0,0]);
 });
 test("elasticity - compression", function() { 
-  element = TensionElement.create({length: 10, elasicity: 4});
+  element = Material.create({length: 10, elasicity: 4});
   element.position = [[0,0,0], [9,0,0]];
   deepEqual(element.force(), [0,0,0]);
 });
 test("elasticity - multiple dimension", function() {
-  element = TensionElement.create({length: 10, elasicity: 4});
+  element = Material.create({length: 10, elasicity: 4});
   element.position = [[0,0,0], [6,6,7]];
   deepEqual(element.force(), [-24/11, -24/11, -28/11]);
 });
