@@ -1,4 +1,4 @@
-load('src/vector.js')
+load('src/.js/vector.js')
 
 Global.Material =
   create: (data) ->

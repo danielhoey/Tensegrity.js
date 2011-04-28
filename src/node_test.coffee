@@ -1,4 +1,4 @@
-load("src/node.js")
+load("src/.js/node.js")
 
 module("Node")
 test("acts like array of numbers", () ->

@@ -1,4 +1,4 @@
-load("src/material.js")
+load("src/.js/material.js")
 
 module("Material")
 test("position vector", () ->

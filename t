@@ -1,17 +1,19 @@
 #!/usr/bin/env ruby
 
-if not system("coffee -c src")
+if not system("coffee -c -o src/.js src")
   exit
 end
 
 def test_files(arguments)
-  arguments.collect{ |arg| 
-    file = "#{arg}_test.js"
+  arguments.collect{ |arg|
+    dir, file = File.split(arg)
+    file = "#{dir}/.js/#{file}_test.js"
     if File.exists?(file)
       file
     elsif File.directory?(arg)
-      Dir["#{arg}/*_test.js"]
+      Dir["#{arg}/.js/*_test.js"]
     else
+      puts "'#{file}' not found"
       nil
     end
   }.compact.flatten

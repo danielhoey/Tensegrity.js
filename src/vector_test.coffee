@@ -1,4 +1,4 @@
-load("src/vector.js")
+load("src/.js/vector.js")
 
 module("Vector")
 test("acts like array of numbers", () ->
