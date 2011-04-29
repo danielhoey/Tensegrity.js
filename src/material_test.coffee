@@ -2,22 +2,22 @@ load("src/.js/material.js")
 
 module("Material")
 test("position vector", () ->
-  material = Material.create()
+  material = create(Material)
   element = create(material, {position: [[0,0,0], [11,0,0]]})
   arrayEquals(element.vector(), [11,0,0])
 )
 test("elasticity - one dimension", () ->
-  element = Material.create({length: 10, elasicity: 4})
+  element = create(Material, {length: 10, elasicity: 4})
   element.position = [[0,0,0], [11,0,0]]
   deepEqual(element.force(), [-4,0,0])
 )
 test("elasticity - compression", () ->
-  element = Material.create({length: 10, elasicity: 4})
+  element = create(Material, {length: 10, elasicity: 4})
   element.position = [[0,0,0], [9,0,0]]
   deepEqual(element.force(), [0,0,0])
 )
 test("elasticity - multiple dimension", () ->
-  element = Material.create({length: 10, elasicity: 4})
+  element = create(Material, {length: 10, elasicity: 4})
   element.position = [[0,0,0], [6,6,7]]
   deepEqual(element.force(), [-24/11, -24/11, -28/11])
 )
