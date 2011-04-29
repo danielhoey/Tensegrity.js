@@ -2,7 +2,8 @@ load("src/.js/material.js")
 
 module("Material")
 test("position vector", () ->
-  element= Material.create({position:[[0,0,0], [11,0,0]]})
+  material = Material.create()
+  element = Global.instantiate(material, {position: [[0,0,0], [11,0,0]]})
   arrayEquals(element.vector(), [11,0,0])
 )
 test("elasticity - one dimension", () ->
