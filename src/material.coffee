@@ -2,7 +2,7 @@ load('src/.js/vector.js')
 
 Global.Material =
   create: (object={}) ->
-    return Global.instantiate(functions, object)
+    return create(functions, object)
 
 functions =
   force: () -> @vector().unit().scale(-@elasicity * @stretch())

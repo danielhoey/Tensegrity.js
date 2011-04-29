@@ -2,7 +2,7 @@ load('dependency/underscore.js');
 
 Global = this;
 
-Global.instantiate = function(parent, properties) {
+Global.create = function(parent, properties) {
   if (!parent) {throw "parent undefined!";}
   function F() {}
   F.prototype = parent;
