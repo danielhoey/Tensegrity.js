@@ -7,6 +7,8 @@ Global.instantiate = function(parent, properties) {
   function F() {}
   F.prototype = parent;
   var child = new F();
-  _.each(properties, function(value, key){child[key] = value});
+  for (key in properties) { 
+    child[key] = properties[key];
+  }
   return child;
 }
