@@ -10,17 +10,23 @@ test("position vector", () ->
 test("elasticity - one dimension", () ->
   element = create(Material, {length: 10, elasticity: 4, end_points: [[0,0,0], [11,0,0]]})
   element.update()
-  deepEqual(element.force, [-4,0,0])
+  deepEqual(element.force_at([11,0,0]), [-4,0,0])
 )
 test("elasticity - compression", () ->
   element = create(Material, {length: 10, elasticity: 4, end_points: [[0,0,0], [9,0,0]]})
   element.update()
-  deepEqual(element.force, [0,0,0])
+  deepEqual(element.force_at([9,0,0]), [0,0,0])
 )
 test("elasticity - multiple dimension", () ->
   element = create(Material, {length: 10, elasticity: 4, end_points: [[0,0,0], [6,6,7]]})
   element.update()
-  deepEqual(element.force, [-24/11, -24/11, -28/11])
+  deepEqual(element.force_at([6,6,7]), [-24/11, -24/11, -28/11])
+)
+test("elasticity - bidirectional", () ->
+  element = create(Material, {length: 10, elasticity: 4, end_points: [[0,0,0], [11,0,0]]})
+  element.update()
+  deepEqual(element.force_at([11,0,0]), [-4,0,0])
+  deepEqual(element.force_at([0,0,0]), [4,0,0])
 )
 
 

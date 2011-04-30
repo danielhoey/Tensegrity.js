@@ -4,7 +4,12 @@ Global.Material =
   update: () ->
     @vector = Vector.create(@end_points[0], @end_points[1])
     @stretch = stretch(@vector, @length)
-    @force = @vector.unit().scale(-@elasticity * @stretch)
+    @unit_vector = @vector.unit()
+    @force_at = (point) ->
+      if Node.match(@end_points[1], point)
+        @unit_vector.scale(-@elasticity * @stretch)
+      else
+        @unit_vector.scale(@elasticity * @stretch)
 
 
 stretch = (vector, length) ->

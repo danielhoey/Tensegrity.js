@@ -17,3 +17,11 @@ test("calculates force", () ->
 
   deepEqual(node.force(), [0,2,1])
 )
+
+test("match other points", () ->
+  node = create(Node, [1,2,3])
+  ok(Node.match(node, [1,2,3]))
+  ok(!Node.match(node, [2,3,4]))
+  #ok(node.match([1,2,3]))
+  #ok(!node.match([2,3,4]))
+)
