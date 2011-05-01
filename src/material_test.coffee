@@ -30,7 +30,7 @@ test("compressibility", () ->
   element.update()
   equals(element.force_magnitude, 12)
   
- # stretching the element should not result in a force response
+  # stretching the element should not result in a force response
   element.end_points = [[0,0,0], [13,0,0]]
   element.update()
   equals(element.force_magnitude, 0)
@@ -55,14 +55,3 @@ test("force - bidirectional", () ->
   deepEqual(element.force_at([0,0,0]), [4,0,0])
 )
 
-
-arrayEquals = (a1, a2) ->
-  i = 0
-  while(true)
-    if (a1[i] != a2[i])
-      QUnit.push(false, a1[i], a2[i], "element "+i+" does not match")
-    else if (a1[i]?)
-      QUnit.push(true)
-      return
-    else
-      i = i + 1

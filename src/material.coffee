@@ -1,4 +1,5 @@
 load('src/.js/vector.js')
+load('src/.js/node.js')
 
 Global.Material =
   elasticity: 0

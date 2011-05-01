@@ -18,6 +18,15 @@ test("calculates force", () ->
   deepEqual(node.force(), [0,2,1])
 )
 
+test("applies force", () ->
+  node = create(Node, [1,2,3])
+  link1 = force: (n) -> [-1,0,1]
+  node.links = [link1]
+  node.apply_force()
+  arrayEquals(node, [0,2,4])
+)
+ 
+
 test("match other points", () ->
   node = create(Node, [1,2,3])
   ok(Node.match(node, [1,2,3]))

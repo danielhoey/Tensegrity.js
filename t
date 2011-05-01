@@ -25,6 +25,7 @@ script = %{
 load("dependency/qunit/qunit-cli.js");
 load("dependency/underscore.js");
 load("src/global.js");
+load("src/.js/qunit_extensions.js");
 #{load_test_files}
 
 QUnit.begin();
