@@ -2,8 +2,7 @@ load("src/.js/material.js")
 
 module("Material")
 test("position vector", () ->
-  material = create(Material)
-  element = create(material, {end_points: [[0,0,0], [11,0,0]]})
+  element = create(Material, {end_points: [[0,0,0], [11,0,0]]})
   element.update()
   arrayEquals(element.vector, [11,0,0])
 )

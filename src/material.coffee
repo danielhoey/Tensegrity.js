@@ -7,10 +7,14 @@ load('src/.js/node.js')
 Global.Material =
   elasticity: 0
   compressibility: 0
+  init: () ->
+    @initial_length = @length
+
   update: () ->
     @vector = Vector.create(@end_points[0], @end_points[1])
+    @length = @vector.length
     @unit_vector = @vector.unit()
-    @stretch = (@vector.length - @length) / @length
+    @stretch = (@length - @initial_length) / @initial_length
     @force_magnitude = @magnitude_of_response()
 
     @force_at = (point) ->
