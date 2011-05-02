@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'tools/test_common.rb'
+
+exit if not compile_src
+
+ARGV = ["src"] if ARGV.empty?
+
+run_tests(test_files(ARGV, :suffix=>"_test"))
