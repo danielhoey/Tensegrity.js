@@ -2,8 +2,8 @@
 
 Global.Vector =
   length: (v) -> Math.sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2])
-  sum: (v1, v2) ->
-    [v1[0]+v2[0], v1[1]+v2[1], v1[2]+v2[2]]
+  sum: (v1, v2) -> [v1[0]+v2[0], v1[1]+v2[1], v1[2]+v2[2]]
+  text: (v) -> "["+v[0]+", "+v[1]+", "+v[2]+"]"
 
   create: (p1, p2) ->
     if not p2?

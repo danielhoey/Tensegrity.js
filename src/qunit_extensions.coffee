@@ -10,7 +10,9 @@ Global.arrayEquals = (a1, a2) ->
     i = i + 1
 
 Global.pointEquals = (p1, p2, options={delta:0}) ->
+  throw "require options.delta" if not options.delta?
   for i in [0..2]
     if Math.abs(p1[i] - p2[i]) > options.delta
       QUnit.push(false, p1[i], p2[i], "element "+i+" does not match")
       return
+  QUnit.push(true)

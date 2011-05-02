@@ -20,8 +20,10 @@ Global.Material =
     @force_at = (point) ->
       if Node.match(@end_points[1], point)
         @unit_vector.scale(-@force_magnitude)
-      else
+      else if Node.match(@end_points[0], point)
         @unit_vector.scale(@force_magnitude)
+      else
+        throw "force_at() called with a point "+Vector.text(point)+" that is neither of the end points!"
 
   magnitude_of_response: () ->
     if @stretch > 0

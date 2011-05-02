@@ -11,8 +11,8 @@ test("acts like array of numbers", () ->
 
 test("calculates force", () ->
   node = create(Node, [1,2,3])
-  link1 = force: (n) -> [-1,0,1]
-  link2 = force: (n) -> [1,2,0]
+  link1 = force_at: () -> [-1,0,1]
+  link2 = force_at: () -> [1,2,0]
   node.links = [link1, link2]
 
   deepEqual(node.force(), [0,2,1])
@@ -20,7 +20,7 @@ test("calculates force", () ->
 
 test("applies force", () ->
   node = create(Node, [1,2,3])
-  link1 = force: (n) -> [-1,0,1]
+  link1 = force_at: () -> [-1,0,1]
   node.links = [link1]
   node.apply_force()
   arrayEquals(node, [0,2,4])
