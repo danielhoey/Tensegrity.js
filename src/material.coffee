@@ -18,15 +18,19 @@ Global.Material =
     @force_magnitude = @magnitude_of_response()
 
     @force_at = (point) ->
-      if Node.match(@end_points[1], point)
-        @unit_vector.scale(-@force_magnitude)
-      else if Node.match(@end_points[0], point)
+      throw "point is undefined!" if not point?
+      if Node.match(@end_points[0], point)
         @unit_vector.scale(@force_magnitude)
+      else if Node.match(@end_points[1], point)
+        @unit_vector.scale(-@force_magnitude)
       else
-        throw "force_at() called with a point "+Vector.text(point)+" that is neither of the end points!"
+        throw "force_at() called with a point #{Vector.text(point)} that is neither of the end points (#{Vector.text(@end_points[0])} and #{Vector.text(@end_points[1])})"
 
   magnitude_of_response: () ->
     if @stretch > 0
       return @elasticity * @stretch
     else
       return @compressibility * -@stretch
+
+  to_s: () ->
+    "Material(e: #{@elasticity}, c: #{@compressibility}, il: #{@initial_length}, v: [#{Vector.text(@end_points[0])}, #{Vector.text(@end_points[1])})"
