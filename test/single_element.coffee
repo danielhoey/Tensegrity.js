@@ -1,13 +1,12 @@
 load("src/.js/node.js")
 load("src/.js/material.js")
+load("src/.js/world.js")
 
 module("Single Element")
 test "should return to initial length", () ->
   n1 = create(Node, [0,0,0])
   n2 = create(Node, [0,110,0])
-  link = create(Material, {length: 100, elasticity: 5, end_points: [n1, n2]})
-  n1.links = [link]
-  n2.links = [link]
+  link = World.create_element(Material, {length: 100, elasticity: 5, end_points: [n1, n2]})
   link.update()
 
   for i in [0..90]

@@ -1,6 +1,7 @@
 load('src/.js/vector.js')
 
 Global.Node =
+  links: []
   force: () ->
     node = this
     _.reduce(@links,
