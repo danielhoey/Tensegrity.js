@@ -14,7 +14,8 @@ Global.Material =
     @vector = Vector.create(@end_points[0], @end_points[1])
     @length = @vector.length
     @unit_vector = @vector.unit()
-    @stretch = (@length - @initial_length) / @initial_length
+    @tension = (@length - @initial_length) / @initial_length
+    @compression = -@tension
     @force_magnitude = @magnitude_of_response()
 
     @force_at = (point) ->
@@ -27,10 +28,10 @@ Global.Material =
         throw "force_at() called with a point #{Vector.text(point)} that is neither of the end points (#{Vector.text(@end_points[0])} and #{Vector.text(@end_points[1])})"
 
   magnitude_of_response: () ->
-    if @stretch > 0
-      return @elasticity * @stretch
+    if @tension > 0
+      return @elasticity * @tension
     else
-      return @compressibility * -@stretch
+      return @compressibility * @compression
 
   to_s: () ->
-    "Material(e: #{@elasticity}, c: #{@compressibility}, il: #{@initial_length}, v: [#{Vector.text(@end_points[0])}, #{Vector.text(@end_points[1])})"
+    "Material(e: #{@elasticity}, c: #{@compressibility}, il: #{@initial_length}, t: #{@tension}, c: #{@compression}, v: [#{Vector.text(@end_points[0])}, #{Vector.text(@end_points[1])})"
