@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<heirarchy version="1.0"?>
- <node name="resource://models">
-  <leaf name="moscow.spr" desc="Moscow"/>
-  <leaf name="soccer.spr" desc="Soccer ball"/>
-  <leaf name="dodecahedron.spr" desc="Dodecahedron"/>
-  <leaf name="icosahedron.spr" desc="Icosahedron"/>
- </node>
-</heirarchy>

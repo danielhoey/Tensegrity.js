@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<heirarchy version="1.0"?>
- <node name="http://springie.com/models/stellated">
-  <leaf name="pancake.spr" desc="Pancake"/>
-  <leaf name="pancake_2.spr" desc="Pancake 2"/>
-  <leaf name="solid_lump.spr" desc="Solid Lump"/>
-  <leaf name="tetrahelix_donut.spr" desc="Tetrahelix donut"/>
- </node>
-</heirarchy>
